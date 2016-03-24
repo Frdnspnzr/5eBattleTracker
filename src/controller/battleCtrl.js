@@ -80,6 +80,12 @@ app.controller('BattleCtrl', ['$scope', '$log', function($scope,$log) {
 	$scope.delete = function(id) {
 		for (i = 0; i < $scope.creatures.length; i++) {
 			creature = $scope.creatures[i];
+
+			//If the deleted creature is currently active skip it
+			if (creature.active == 'active') {
+				$scope.forward();
+			}
+
 			if (creature.id == id) {
 				$scope.creatures.splice(i,1);
 				break;
