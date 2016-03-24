@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="5e-battletracker">
+<head>
+	<title>5E Battle Tracker</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<script type="text/javascript" src="js/vendor/angular.min.js"></script>
+	<script type="text/javascript" src="<%= grunt.config.get('pkg.name') %>.min.js"></script>
+</head>
+
+<body ng-controller="BattleCtrl as battle">
+	<nav>
+		<a href="" ng-click='add()'><img src="./img/glyphicons_006_user_add.png" /></a>
+		<a href="" ng-click='restart()'><img src="./img/glyphicons_057_history.png" /></a>
+		<a href="" ng-click='forward()'><img src="./img/glyphicons_176_forward.png" /></a>
+	</nav>
+	<p ng-show="!creatures.length">Start by adding a creature!</p>
+	<table id="creature-list" ng-show="creatures.length > 0">
+		<thead>
+			<tr>
+				<th class="turn-indicator">&nbsp;</th>
+				<th class="init">Init</th>
+				<th class="name">Name</th>
+				<th class="hp">HP</th>
+				<th class="reaction">Reaction</th>
+				<th class="description">Comment</th>
+				<th class="actions">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat-start="creature in creatures track by creature.id" class="creature">
+				<!-- Turn indicator -->
+				<td class="attribute turn-indicator {{creature.active}}">
+					<img src="./img/glyphicons_211_right_arrow.png" class="indicator" />
+				</td>
+
+				<!-- Initiative -->
+				<td class="attribute init">
+					<input type="number" min="0" max="50" required="true" ng-model="creature.initiative" ng-change="sortCreatures();" />
+				</td>
+
+				<!-- Name -->
+				<td class="attribute name">
+					<input type="text" ng-model="creature.name" size="20" />
+				</td>
+
+				<!-- HP -->
+				<td class="attribute hp">
+					<input type="number" min="0" max="9999" ng-model="creature.hp" />
+				</td>
+
+				<!-- Reaction -->
+				<td class="attribute hp">
+					<input type="checkbox" ng-model="creature.reaction" />
+				</td>
+
+				<!-- Note -->
+				<td class="attribute description">
+					<input type="text" ng-model="creature.description" size="50" />
+				</td>
+
+				<!-- Actions -->
+				<td class="attribute actions">
+					<a href="" ng-click="delete(creature.id)"><img src="./img/glyphicons-17-bin.png" /></a>
+					<a href="" ng-click="clone(creature.id)"><img src="./img/glyphicons-512-copy.png" /></a>
+					<a href="" ng-click="addNote(creature.id)"><img src="./img/glyphicons_190_circle_plus.png"></a>
+				</td>
+			</tr>
+
+			<tr ng-repeat-end ng-repeat="note in creature.notes" class="note">
+				<td colspan="6">
+					<a href="" ng-click="deleteNote(creature.id,note.id)">
+						<img src="./img/glyphicons_192_circle_remove.png" />
+					</a>
+					<span class="text">
+						<input type="text" ng-model="note.text" size="30" class="text"/>
+					</span>
+					<span class="rounds">
+						<input type="number" min="0" max="999" ng-model="note.rounds" ng-class="{'invalid':note.rounds==0}" /> Rounds
+					</span>
+					<span class="turns">
+						<input type="number" min="0" max="999" ng-model="note.turns"  ng-class="{'invalid':note.turns==0}" /> Turns
+					</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+<footer>
+	5E Battle Tracker is in no way affiliated with <a href="http://company.wizards.com">Wizards of the Coast</a> and uses the awesome free <a href="http://glyphicons.com">Glyphicons</a> under the <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0 License</a>.
+	<br />
+	It was made by that dude you can follow on <a href="https://twitter.com/frdnspnzr">Twitter</a> to learn lots of German words for hating video games.
+</footer>
+
+</html>

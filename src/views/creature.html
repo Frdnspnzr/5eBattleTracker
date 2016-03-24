@@ -1,0 +1,38 @@
+<tr>
+	<!-- Turn indicator -->
+	<td class="attribute turn-indicator {{creature.active}}">
+		<img src="./img/glyphicons_211_right_arrow.png" class="indicator" />
+	</td>
+
+	<!-- Initiative -->
+	<td class="attribute init">
+		<input type="number" min="0" max="50" required="true" ng-model="creature.initiative" />
+	</td>
+
+	<!-- Name -->
+	<td class="attribute name">
+		<input type="text" ng-model="creature.name" size="20" />
+	</td>
+
+	<!-- HP -->
+	<td class="attribute hp">
+		<input type="number" min="0" max="9999" ng-model="creature.hp" />
+	</td>
+
+	<!-- Note -->
+	<td class="attribute description">
+		<input type="text" ng-model="creature.description" size="50" />
+	</td>
+
+	<!-- Actions -->
+	<td class="attribute actions">
+		<a href="" ng-click="delete(creature.id)"><img src="./img/glyphicons-17-bin.png" /></a>
+		<a href="" ng-click="clone(creature.id)"><img src="./img/glyphicons-512-copy.png" /></a>
+	</td>
+</tr>
+
+<tr>
+	<td colspan="6">
+		Hier kommen Kommentare hin!
+	</td>
+</tr>

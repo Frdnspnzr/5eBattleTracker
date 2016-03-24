@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-style: italic;
+}
+footer a {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+p {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 20px;
+}
+#creature-list {
+  margin: auto;
+  display: table;
+}
+#creature-list tbody tr.creature {
+  height: 30px;
+}
+#creature-list tbody tr.creature .heading {
+  font-weight: bold;
+  text-align: center;
+}
+#creature-list tbody tr.creature .attribute {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+#creature-list tbody tr.creature .turn-indicator.active .indicator {
+  display: block;
+}
+#creature-list tbody tr.creature .turn-indicator.inactive .indicator {
+  display: none;
+}
+#creature-list tbody tr.creature .turn-indicator {
+  width: 35px;
+}
+#creature-list tbody tr.creature .init {
+  width: 50px;
+}
+#creature-list tbody tr.creature .name {
+  width: 220px;
+}
+#creature-list tbody tr.creature .hp {
+  width: 80px;
+}
+#creature-list tbody tr.creature .description {
+  width: 500px;
+}
+#creature-list tbody tr.creature .actions {
+  width: 150px;
+}
+#creature-list tbody tr.creature .actions img {
+  max-width: 30px;
+  max-height: 30px;
+  margin: 5px;
+}
+#creature-list tbody tr.creature input {
+  border: 0;
+  background-color: #EEE;
+  font-size: 16px;
+  padding: 3px;
+  height: 25px;
+}
+#creature-list tbody tr.note td {
+  text-align: center;
+  font-size: 11px;
+  font-style: italic;
+  color: #333;
+}
+#creature-list tbody tr.note td .rounds {
+  width: 80px;
+}
+#creature-list tbody tr.note td .turns {
+  width: 80px;
+}
+#creature-list tbody tr.note a {
+  border: 0;
+  text-decoration: none;
+}
+#creature-list tbody tr.note img {
+  max-height: 12px;
+}
+#creature-list tbody tr.note input {
+  border: 0;
+  background-color: #EEE;
+  font-size: 12px;
+  padding: 2px;
+  height: 19px;
+}
+#creature-list tbody tr.note input.invalid {
+  background-color: #FF7A7A;
+}

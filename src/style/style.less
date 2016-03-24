@@ -1,0 +1,144 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+}
+
+nav {
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+}
+
+footer {
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	font-family: sans-serif;
+	font-size: 12px;
+	font-style: italic;
+
+	a {
+		font-weight: bold;
+		text-decoration: none;
+		color: black;
+	}
+}
+
+p {
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 20px;
+}
+
+#creature-list {
+
+	margin:auto;
+	display: table;
+
+	tbody tr.creature {
+
+		height: 30px;
+
+		.heading {
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.attribute {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+
+		.turn-indicator.active .indicator {
+			display: block;
+		}
+
+		.turn-indicator.inactive .indicator {
+			display: none;
+		}
+
+		.turn-indicator {
+			width: 35px;
+		}
+
+		.init {
+			width: 50px;
+		}
+
+		.name {
+			width: 220px;
+		}
+
+		.hp {
+			width: 80px;
+		}
+
+		.description{
+			width: 500px;
+		}
+
+		.actions {
+			width: 150px;
+			img {
+				max-width: 30px;
+				max-height: 30px;
+				margin: 5px;
+			}
+		}
+
+		input {
+			border: 0;
+			background-color: #EEE;
+			font-size: 16px;
+			padding: 3px;
+			height: 25px;
+		}
+
+	}
+
+	tbody tr.note {
+
+		td {
+			text-align: center;
+			font-size: 11px;
+			font-style: italic;
+			color: #333;
+			.text {
+			}
+			.rounds {
+				width: 80px;
+			}
+			.turns {
+				width: 80px;
+			}
+		}
+
+		a {
+			border: 0;
+			text-decoration: none;
+		}
+
+		img {
+			max-height: 12px;
+		}
+
+		input {
+			border: 0;
+			background-color: #EEE;
+			font-size: 12px;
+			padding: 2px;
+			height: 19px;
+			&.invalid {
+				background-color: #FF7A7A;
+			}
+		}
+	}
+}
+
