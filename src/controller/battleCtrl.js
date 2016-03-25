@@ -14,7 +14,7 @@ app.controller('BattleCtrl', ['$scope', '$log', function($scope,$log) {
 		if ($scope.creatures.length > 0) {
 			$scope.setCreatureActive(0);
 		}
-		for (i = 1; i < $scope.creatures.length; i++) {
+		for (var i = 1; i < $scope.creatures.length; i++) {
 			$scope.setCreatureInactive(i);
 		}
 	};
@@ -23,7 +23,7 @@ app.controller('BattleCtrl', ['$scope', '$log', function($scope,$log) {
 
 		//Find the currently active creature
 		var active = -1;
-		for (i = 0; i < $scope.creatures.length; i++) {
+		for (var i = 0; i < $scope.creatures.length; i++) {
 			if ($scope.creatures[i].active == 'active') {
 				active = i;
 				init = $scope.creatures[i].initiative;
@@ -78,7 +78,7 @@ app.controller('BattleCtrl', ['$scope', '$log', function($scope,$log) {
 	};
 
 	$scope.delete = function(id) {
-		for (i = 0; i < $scope.creatures.length; i++) {
+		for (var i = 0; i < $scope.creatures.length; i++) {
 			creature = $scope.creatures[i];
 
 			//If the deleted creature is currently active skip it
@@ -94,7 +94,7 @@ app.controller('BattleCtrl', ['$scope', '$log', function($scope,$log) {
 	};
 
 	$scope.clone = function(id) {
-		for (i = 0; i < $scope.creatures.length; i++) {
+		for (var i = 0; i < $scope.creatures.length; i++) {
 			creature = $scope.creatures[i];
 			if (creature.id == id) {
 				var newCreature = {
@@ -120,7 +120,7 @@ app.controller('BattleCtrl', ['$scope', '$log', function($scope,$log) {
 	};
 
 	$scope.addNote = function(creatureID) {
-		for (i = 0; i < $scope.creatures.length; i++) {
+		for (var i = 0; i < $scope.creatures.length; i++) {
 			creature = $scope.creatures[i];
 			if (creature.id == creatureID) {
 				var newNote = {
@@ -137,7 +137,7 @@ app.controller('BattleCtrl', ['$scope', '$log', function($scope,$log) {
 
 	$scope.deleteNote = function(creatureID,noteID) {
 		search:
-		for (i = 0; i < $scope.creatures.length; i++) {
+		for (var i = 0; i < $scope.creatures.length; i++) {
 			creature = $scope.creatures[i];
 			if (creature.id == creatureID) {
 				for (j = 0; j < creature.notes.length; j++) {
