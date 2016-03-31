@@ -77,6 +77,10 @@ app.controller('BattleCtrl', ['$scope', '$log', function($scope,$log) {
 		$scope.creatures.push(newCreature);
 	};
 
+	$scope.parse = function(creature) {
+		creature.hp = parseFormula(creature.hp.toString());
+	}
+
 	$scope.delete = function(id) {
 		for (var i = 0; i < $scope.creatures.length; i++) {
 			creature = $scope.creatures[i];
